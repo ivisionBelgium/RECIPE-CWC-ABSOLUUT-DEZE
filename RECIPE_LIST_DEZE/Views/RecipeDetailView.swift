@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     
-    var
+    
+    // recipe is een nieuwe variabele
+    //var recipe:Recipetje
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -18,6 +20,8 @@ struct RecipeDetailView: View {
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        
+        //let prevModel = Recipetje
         RecipeDetailView()
     }
 }

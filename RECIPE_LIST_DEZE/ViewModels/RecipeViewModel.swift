@@ -11,7 +11,7 @@ class RecipeViewModel: ObservableObject {
     
     
     // empty recipe objects
-    @Published var recipes = [Recipetje]()
+    @Published var pubRecipes = [Recipetje]()
     
     init() {
         
@@ -24,7 +24,7 @@ class RecipeViewModel: ObservableObject {
         
        // self.recipes = DataService().getLocalData()
         // indien static func in Dataservice
-        self.recipes = DataService.getLocalData()
+        self.pubRecipes = DataService.getLocalData()
         
         
     }

@@ -15,7 +15,7 @@ struct RecipeListView: View {
         
      
             
-            List(vModel.recipes){ r in
+            List(vModel.pubRecipes){ r in
             
                        HStack {
                            
