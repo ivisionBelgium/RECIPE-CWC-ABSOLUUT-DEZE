@@ -13,25 +13,34 @@ struct RecipeListView: View {
     
     var body: some View {
         
-     
-            
+        NavigationView {
             List(vModel.pubRecipes){ r in
-            
-                       HStack {
-                           
-                           Image(r.image)
-                               .resizable()
-                               .scaledToFill()
-                               .frame(width: 50, height: 50)
-                               .clipped()
-                               .cornerRadius(5)
-                               .font(.title3)
-                           
-                           Text(r.name)
-                               .padding()
-                           
-                       }
+            NavigationLink(destination: RecipeDetailView(newVarRecipe: r),
+                
+                           label: {
+                    HStack {
+                        
+                        Image(r.image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50, height: 50)
+                            .clipped()
+                            .cornerRadius(5)
+                            .font(.title3)
+                        
+                        Text(r.name)
+                            .padding()
+                        
+                    }
+                    .navigationBarTitle("All Ingredients")
+                    
+                })
+                
+                       
                    }
+        }
+            
+          
                 
                     
              
