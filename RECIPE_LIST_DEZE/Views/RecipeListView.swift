@@ -1,5 +1,5 @@
 //
-//  RecipeViewList.swift
+//  RecipeListView.swift
 //  RECIPE_LIST_DEZE
 //
 //  Created by Koen Sas on 08/10/2022.
@@ -7,20 +7,16 @@
 
 import SwiftUI
 
-struct RecipeViewList: View {
+struct RecipeListView: View {
     
-    @ObservedObject var vModel = RecipeViewModel()
+    @ObservedObject var model = RecipeModel()
     
     var body: some View {
         
-        NavigationView {
+     
             
-            List(vModel.publRecipes){ r in
-                //MARK: nakijken recipe of recipeModel
-                NavigationLink (
-                    destination: RecipeDetailView(RecipeModel: r),
-                    label: {
-                       
+            List(model.recipes){ r in
+            
                        HStack {
                            
                            Image(r.image)
@@ -28,6 +24,7 @@ struct RecipeViewList: View {
                                .scaledToFill()
                                .frame(width: 50, height: 50)
                                .clipped()
+                               .cornerRadius(5)
                                .font(.title3)
                            
                            Text(r.name)
@@ -35,19 +32,18 @@ struct RecipeViewList: View {
                            
                        }
                    }
-                )
+                
                     
              
 
              
             }
-        }
-        .navigationBarTitle("All recipes")
+      
     }
-}
+
 
 struct RecipeViewList_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeViewList()
+        RecipeListView()
     }
 }

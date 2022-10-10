@@ -1,5 +1,5 @@
 //
-//  DataServices.swift
+//  DataService.swift
 //  RECIPE_LIST_DEZE
 //
 //  Created by Koen Sas on 08/10/2022.
@@ -7,18 +7,22 @@
 
 import Foundation
 
-class DataServices {
+class DataService {
     
-    static func getLocalData() -> [RecipeModel]{
+//    func getLocalData() -> [Recipe] {
+        
+      static func getLocalData() -> [Recipe] {
         
         // Path to local json file
         
-        var pathString = Bundle.main.path(forResource: "recipes", ofType: "json")
+        let pathString = Bundle.main.path(forResource: "recipes", ofType: "json")
         
+        
+        // check if pathString is not nil otherwise...
         guard pathString != nil else {
             
             //return empry recipe model
-            return [RecipeModel]()
+            return [Recipe]()
         }
         // CREATE URL OBJECT
         
@@ -35,7 +39,7 @@ class DataServices {
             let decoder = JSONDecoder()
     
             do {
-                let recipeData = try decoder.decode([RecipeModel].self, from: data)
+                let recipeData = try decoder.decode([Recipe].self, from: data)
                 
                 // add unique ID's
                 for r in recipeData {
@@ -44,6 +48,7 @@ class DataServices {
                 }
                 
                 return recipeData
+                
             }  catch {
                 
                 print(error)
@@ -55,6 +60,6 @@ class DataServices {
         }
 
         // moeten we doen
-        return [RecipeModel]()
+        return [Recipe]()
     }
 }
