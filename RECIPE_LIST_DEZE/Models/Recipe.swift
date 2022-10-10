@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecipeModel: Identifiable, Decodable {
+class Recipe: Identifiable, Decodable {
     
     
     
