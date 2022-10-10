@@ -11,17 +11,55 @@ struct RecipeDetailView: View {
     
     
     // recipe is een nieuwe variabele
-    //var recipe:Recipetje
+    var newVarRecipe:Recipetje
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView {
+           
+            // MARK: sdssd
+            Image(newVarRecipe.image)
+                .resizable()
+                .scaledToFit()
+          
+            // MARK: Ingredients
+            
+            VStack(alignment: .leading) {
+                Text("Ingredients")
+                    .padding(.bottom)
+                
+                ForEach (newVarRecipe.ingredients, id: \.self) { item in
+                    
+                    Text(item)
+                    
+                }
+                
+                // MARK: Directions
+                
+                Text("Directions")
+                    .padding(.top)
+                
+                ForEach (newVarRecipe.directions, id: \.self) { index in
+                    
+                    Text(index)
+                }
+                
+            }
+            
+            
+                
+               
+                
+            
+        }
+      
     }
 }
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         
-        //let prevModel = Recipetje
-        RecipeDetailView()
+        let prevModel = RecipeViewModel()
+        RecipeDetailView(newVarRecipe: prevModel.pubRecipes[0])
     }
 }
