@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C544BE428F4355900006288 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C544BE328F4355900006288 /* RecipeDetailView.swift */; };
 		5C812EBF28F1B7D500B945B6 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EBE28F1B7D500B945B6 /* RecipeListView.swift */; };
-		5C812EC128F1B83600B945B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC028F1B83600B945B6 /* Recipe.swift */; };
-		5C812EC528F1B86F00B945B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC428F1B86F00B945B6 /* RecipeModel.swift */; };
+		5C812EC128F1B83600B945B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC028F1B83600B945B6 /* RecipeModel.swift */; };
+		5C812EC528F1B86F00B945B6 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC428F1B86F00B945B6 /* RecipeViewModel.swift */; };
 		5C812EC728F1B88100B945B6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC628F1B88100B945B6 /* DataService.swift */; };
 		5CFE431328F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE431228F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift */; };
 		5CFE431728F1752C00D1F71F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE431628F1752C00D1F71F /* Assets.xcassets */; };
@@ -18,9 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C544BE328F4355900006288 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		5C812EBE28F1B7D500B945B6 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
-		5C812EC028F1B83600B945B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		5C812EC428F1B86F00B945B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		5C812EC028F1B83600B945B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		5C812EC428F1B86F00B945B6 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		5C812EC628F1B88100B945B6 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5CFE430F28F1752900D1F71F /* RECIPE_LIST_DEZE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RECIPE_LIST_DEZE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE431228F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECIPE_LIST_DEZEApp.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		5CFE433028F17BE800D1F71F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5C812EC028F1B83600B945B6 /* Recipe.swift */,
+				5C812EC028F1B83600B945B6 /* RecipeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,7 +108,7 @@
 		5CFE433328F17BEC00D1F71F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5C812EC428F1B86F00B945B6 /* RecipeModel.swift */,
+				5C812EC428F1B86F00B945B6 /* RecipeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5C812EBE28F1B7D500B945B6 /* RecipeListView.swift */,
+				5C544BE328F4355900006288 /* RecipeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,10 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C812EC728F1B88100B945B6 /* DataService.swift in Sources */,
-				5C812EC528F1B86F00B945B6 /* RecipeModel.swift in Sources */,
+				5C544BE428F4355900006288 /* RecipeDetailView.swift in Sources */,
+				5C812EC528F1B86F00B945B6 /* RecipeViewModel.swift in Sources */,
 				5C812EBF28F1B7D500B945B6 /* RecipeListView.swift in Sources */,
 				5CFE431328F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift in Sources */,
-				5C812EC128F1B83600B945B6 /* Recipe.swift in Sources */,
+				5C812EC128F1B83600B945B6 /* RecipeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

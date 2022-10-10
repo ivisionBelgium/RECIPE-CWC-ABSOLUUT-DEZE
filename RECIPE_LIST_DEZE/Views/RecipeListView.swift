@@ -9,13 +9,13 @@ import SwiftUI
 
 struct RecipeListView: View {
     
-    @ObservedObject var model = RecipeModel()
+    @ObservedObject var vModel = RecipeViewModel()
     
     var body: some View {
         
      
             
-            List(model.recipes){ r in
+            List(vModel.recipes){ r in
             
                        HStack {
                            

@@ -11,7 +11,7 @@ class DataService {
     
 //    func getLocalData() -> [Recipe] {
         
-      static func getLocalData() -> [Recipe] {
+      static func getLocalData() -> [Recipetje] {
         
         // Path to local json file
         
@@ -22,7 +22,7 @@ class DataService {
         guard pathString != nil else {
             
             //return empry recipe model
-            return [Recipe]()
+            return [Recipetje]()
         }
         // CREATE URL OBJECT
         
@@ -39,7 +39,7 @@ class DataService {
             let decoder = JSONDecoder()
     
             do {
-                let recipeData = try decoder.decode([Recipe].self, from: data)
+                let recipeData = try decoder.decode([Recipetje].self, from: data)
                 
                 // add unique ID's
                 for r in recipeData {
@@ -60,6 +60,6 @@ class DataService {
         }
 
         // moeten we doen
-        return [Recipe]()
+        return [Recipetje]()
     }
 }

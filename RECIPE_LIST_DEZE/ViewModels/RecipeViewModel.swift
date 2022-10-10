@@ -7,11 +7,11 @@
 
 import Foundation
 
-class RecipeModel: ObservableObject {
+class RecipeViewModel: ObservableObject {
     
     
     // empty recipe objects
-    @Published var recipes = [Recipe]()
+    @Published var recipes = [Recipetje]()
     
     init() {
         

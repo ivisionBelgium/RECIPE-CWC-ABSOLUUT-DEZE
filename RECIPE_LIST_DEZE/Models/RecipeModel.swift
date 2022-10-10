@@ -1,5 +1,5 @@
 //
-//  Recipe.swift
+//  RecipeModel.swift
 //  RECIPE_LIST_DEZE
 //
 //  Created by Koen Sas on 08/10/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Recipe: Identifiable, Decodable {
+class Recipetje: Identifiable, Decodable {
     
     
     
