@@ -1,5 +1,5 @@
 //
-//  RecipeModel.swift
+//  Recipe.swift
 //  RECIPE_LIST_DEZE
 //
 //  Created by Koen Sas on 08/10/2022.

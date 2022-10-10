@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C812EBF28F1B7D500B945B6 /* RecipeViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EBE28F1B7D500B945B6 /* RecipeViewList.swift */; };
 		5C812EC128F1B83600B945B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC028F1B83600B945B6 /* Recipe.swift */; };
-		5C812EC528F1B86F00B945B6 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC428F1B86F00B945B6 /* RecipeViewModel.swift */; };
+		5C812EC528F1B86F00B945B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC428F1B86F00B945B6 /* RecipeModel.swift */; };
 		5C812EC728F1B88100B945B6 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC628F1B88100B945B6 /* DataServices.swift */; };
 		5C812EC928F1D4C200B945B6 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EC828F1D4C200B945B6 /* RecipeDetailView.swift */; };
 		5CFE431328F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE431228F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		5C812EBE28F1B7D500B945B6 /* RecipeViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewList.swift; sourceTree = "<group>"; };
 		5C812EC028F1B83600B945B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		5C812EC428F1B86F00B945B6 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		5C812EC428F1B86F00B945B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		5C812EC628F1B88100B945B6 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		5C812EC828F1D4C200B945B6 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		5CFE430F28F1752900D1F71F /* RECIPE_LIST_DEZE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RECIPE_LIST_DEZE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +108,7 @@
 		5CFE433328F17BEC00D1F71F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5C812EC428F1B86F00B945B6 /* RecipeViewModel.swift */,
+				5C812EC428F1B86F00B945B6 /* RecipeModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 			files = (
 				5C812EC728F1B88100B945B6 /* DataServices.swift in Sources */,
 				5C812EC928F1D4C200B945B6 /* RecipeDetailView.swift in Sources */,
-				5C812EC528F1B86F00B945B6 /* RecipeViewModel.swift in Sources */,
+				5C812EC528F1B86F00B945B6 /* RecipeModel.swift in Sources */,
 				5C812EBF28F1B7D500B945B6 /* RecipeViewList.swift in Sources */,
 				5CFE431328F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift in Sources */,
 				5C812EC128F1B83600B945B6 /* Recipe.swift in Sources */,
