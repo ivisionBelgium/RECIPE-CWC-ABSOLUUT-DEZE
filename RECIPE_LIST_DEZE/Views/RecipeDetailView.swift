@@ -41,9 +41,12 @@ struct RecipeDetailView: View {
                     .padding(.vertical)
                  
                 
-                ForEach (0..<newVarRecipe.directions.count , id: \.self) { index in
+                ForEach (0..<newVarRecipe.directions.count, id: \.self) { index in
                     
-                    Text(String (index) + ". " + newVarRecipe.directions[index])
+                    Text(String(index) + ". " + newVarRecipe.directions[index])
+                        .padding(.bottom, 2.0)
+                     
+                    
                 }
                 
             }
