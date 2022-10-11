@@ -27,6 +27,7 @@ struct RecipeDetailView: View {
             VStack(alignment: .leading) {
                 Text("Ingredients")
                     .padding(.bottom)
+                 
                 
                 ForEach (newVarRecipe.ingredients, id: \.self) { item in
                     
@@ -37,14 +38,16 @@ struct RecipeDetailView: View {
                 // MARK: Directions
                 
                 Text("Directions")
-                    .padding(.top)
+                    .padding(.vertical)
+                 
                 
-                ForEach (newVarRecipe.directions, id: \.self) { index in
+                ForEach (0..<newVarRecipe.directions.count , id: \.self) { index in
                     
-                    Text(index)
+                    Text(String (index) + ". " + newVarRecipe.directions[index])
                 }
                 
             }
+            .padding()
             
             
                 
@@ -52,6 +55,7 @@ struct RecipeDetailView: View {
                 
             
         } .navigationBarTitle(newVarRecipe.name)
+        
        
       
     }
