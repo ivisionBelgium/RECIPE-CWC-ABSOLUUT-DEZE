@@ -10,9 +10,12 @@ import SwiftUI
 struct RecipeTabView: View {
     var body: some View {
         
+        
         TabView {
             
-            Text("Featured")
+            
+            // geweldig gewoon naar class (met dezelfde naam als pagina verwijzen
+           RecipeFeaturedView()
                 .tabItem{
                     
                     VStack{
@@ -23,6 +26,7 @@ struct RecipeTabView: View {
                     }
               
             }
+            // geweldig gewoon naar class (met dezelfde naam als pagina verwijzen
             RecipeListView()
                 .tabItem{
                     
@@ -30,6 +34,10 @@ struct RecipeTabView: View {
                     
                 }
         }
+        // RecipeModel in CWC
+        // refereert eentje lager naar : @EnvironmentObject var vModel : RecipeViewModel`
+        // Onderstaande mag hier weg want nu geplaatst in entry page Recipe_List_DezeApp.swift
+        //.environmentObject(RecipeViewModel())
 
     
     }

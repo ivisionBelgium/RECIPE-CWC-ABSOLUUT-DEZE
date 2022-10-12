@@ -12,6 +12,9 @@ struct RECIPE_LIST_DEZEApp: App {
     var body: some Scene {
         WindowGroup {
             RecipeTabView()
+            
+                // deze mag ook hier staan dan een stapje lager
+                .environmentObject(RecipeViewModel())
         }
     }
 }

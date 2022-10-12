@@ -21,13 +21,13 @@ class Recipetje: Identifiable, Decodable {
     var totalTime:String
     var servings:Int
     // deze moest veranderen van [String] naar [Ingredient] anders error in  Dataservice i.id: werd als string herkent
-    var ingredients:[Ingredient]
+    var ingredients:[Ingredientje]
     var directions:[String]
     var highlights:[String]
     
 }
 
-class Ingredient: Identifiable, Decodable {
+class Ingredientje: Identifiable, Decodable {
     
     // identifiable maakt dat het LIST element de verschillende items ziet, daarom is de UUID verplicgt
     
