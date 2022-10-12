@@ -47,16 +47,12 @@ class DataService {
                     
                     r.id = UUID()
                     
-                    // Add unique aan de ingredients na aanpassing json
                     for i in r.ingredients {
                         
                         i.id = UUID()
                     }
                 }
-                
-               
-             
-                
+          
                 return recipeData
                 
             }  catch {

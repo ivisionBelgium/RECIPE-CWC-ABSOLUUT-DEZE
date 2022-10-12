@@ -28,10 +28,16 @@ struct RecipeDetailView: View {
                 Text("Ingredients")
                     .padding(.bottom)
                  
-                
-                ForEach (newVarRecipe.ingredients, id: \.self) { item in
+                // vooraleer de json aanpassin g
+//                ForEach (newVarRecipe.ingredients, id: \.self) { item in
+//
+//                    Text(item)
+//
+//                }
+                // \.self kan hier weg want lijst is IDENTIFIABLE
+                ForEach (newVarRecipe.ingredients) { item in
                     
-                    Text(item)
+                    Text(item.name)
                     
                 }
                 
