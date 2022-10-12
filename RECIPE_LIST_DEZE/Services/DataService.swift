@@ -38,6 +38,7 @@ class DataService {
             // decode json
             let decoder = JSONDecoder()
     
+            // nu ook ingredients decoden
             do {
                 let recipeData = try decoder.decode([Recipetje].self, from: data)
                 
@@ -45,7 +46,16 @@ class DataService {
                 for r in recipeData {
                     
                     r.id = UUID()
+                    
+                    // Add unique aan de ingredients na aanpassing json
+                    for i in r.ingredients {
+                        
+                        i.id = UUID()
+                    }
                 }
+                
+               
+             
                 
                 return recipeData
                 
