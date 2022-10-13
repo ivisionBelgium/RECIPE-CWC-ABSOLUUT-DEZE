@@ -18,9 +18,9 @@ struct RecipeFeaturedView: View {
         VStack(alignment: .leading) {
             // MARK: features
             Text("Featured Recipes")
-                .font(.title)
+                .font(.largeTitle)
                 .bold()
-                .padding()
+               
             
             
             GeometryReader { geo in
@@ -39,7 +39,7 @@ struct RecipeFeaturedView: View {
                                     .foregroundColor(.white)
                                    
                                 
-                                VStack(spacing:0){
+                                VStack(){
                                     
                                     Image(vModel.pubRecipes[index].image)
                                         .resizable(capInsets: EdgeInsets())
