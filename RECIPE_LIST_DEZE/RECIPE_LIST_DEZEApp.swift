@@ -14,7 +14,8 @@ struct RECIPE_LIST_DEZEApp: App {
             RecipeTabView()
             
                 // deze mag ook hier staan dan een stapje lager
-                .environmentObject(RecipeViewModel())
+            // Crashed ??
+               .environmentObject(RecipeViewModel())
         }
     }
 }

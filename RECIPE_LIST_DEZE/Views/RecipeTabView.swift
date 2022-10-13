@@ -31,13 +31,14 @@ struct RecipeTabView: View {
                 .tabItem{
                     
                     Image(systemName: "list.bullet.rectangle.portrait.fill")
-                    
+                    Text("List")
                 }
         }
         // RecipeModel in CWC
         // refereert eentje lager naar : @EnvironmentObject var vModel : RecipeViewModel`
         // Onderstaande mag hier weg want nu geplaatst in entry page Recipe_List_DezeApp.swift
-        //.environmentObject(RecipeViewModel())
+        // als we em hier niet laten staan crashed de preview, niet de RUN
+        .environmentObject(RecipeViewModel())
 
     
     }
@@ -46,5 +47,8 @@ struct RecipeTabView: View {
 struct RecipeTabView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeTabView()
+            
     }
+    
+
 }
