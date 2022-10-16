@@ -101,13 +101,7 @@ struct RecipeFeaturedView: View {
                     .underline()
                     .bold()
                 
-                ForEach(0..<vModel.pubRecipes.count) { p in
-                    
-                    
-                   // Text(vModel.pubRecipes[p].highlights)
-                    
-                    
-                }
+             
                 
                
                 

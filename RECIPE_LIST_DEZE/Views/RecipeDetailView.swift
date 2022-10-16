@@ -9,24 +9,57 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     
+    @State var varSelectedServings = 3
     
+ 
     // recipe is een nieuwe variabele
     var newVarRecipe:Recipetje
     
     var body: some View {
         
+       
+        
         ScrollView {
            
-            // MARK: sdssd
+            // MARK: Image en picker
             Image(newVarRecipe.image)
                 .resizable()
                 .scaledToFit()
           
-            // MARK: Ingredients
+           
             
             VStack(alignment: .leading) {
+                
+                VStack {
+                    
+                    // MARK: Picker
+                    Picker("ServingsNr", selection: $varSelectedServings) {
+                        
+                        Text("2").tag(2)
+                        Text("4").tag(4)
+                        Text("6").tag(6)
+                        Text("8").tag(8)
+                        
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    // we kunnen enkel 1 parameter ingeven hier, rest blijft hetzelfde
+                    .frame(width: 160)
+                   
+                    
+                    
+                    // deze text geeft he geselecteerde door
+                  
+                0
+                }
+                .padding(.leading, 0)
+                .padding(.trailing)
+                
+                
+                
+                // MARK: Ingredients
                 Text("Ingredients")
                     .padding(.bottom)
+                    .font(.title)
                  
                 // vooraleer de json aanpassin g
 //                ForEach (newVarRecipe.ingredients, id: \.self) { item in
@@ -36,15 +69,17 @@ struct RecipeDetailView: View {
 //                }
                 // \.self kan hier weg want lijst is IDENTIFIABLE
                 ForEach (newVarRecipe.ingredients) { item in
-                    
-                    Text(item.name)
-                    
+       
+                    Text("- " + RecipeViewModel.getPortions(ingredient: item,
+                                                            recipeServings: Recipetje.servings,
+                                                            targetServings: varSelectedServings) + " " + item.name)
+         
                 }
                 
                 // MARK: Directions
                 
                 Text("Directions")
-                    .padding(.vertical)
+                    .padding(.vertical).font(.title)
                  
                 
                 ForEach (0..<newVarRecipe.directions.count, id: \.self) { index in
@@ -56,14 +91,11 @@ struct RecipeDetailView: View {
                 }
                 
             }
-            .padding()
+            .padding(.leading)
+    
             
-            
-                
-               
-                
-            
-        } .navigationBarTitle(newVarRecipe.name)
+        }
+        .navigationBarTitle(newVarRecipe.name)
         
        
       
