@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+
 struct RecipeDetailView: View {
     
-    @State var varSelectedServings = 3
-    
- 
-    // recipe is een nieuwe variabele
-    var newVarRecipe:Recipetje
+        @State var varSelectedServings = 2
+        
+     
+        // recipe is een nieuwe variabele
+        var newVarRecipe:Recipetje
     
     var body: some View {
-        
+ 
        
         
         ScrollView {
@@ -48,8 +49,8 @@ struct RecipeDetailView: View {
                     
                     
                     // deze text geeft he geselecteerde door
-                  
-                0
+                
+                //0   deze actieve kut nul gaf compiler is unable to type check
                 }
                 .padding(.leading, 0)
                 .padding(.trailing)
@@ -70,9 +71,7 @@ struct RecipeDetailView: View {
                 // \.self kan hier weg want lijst is IDENTIFIABLE
                 ForEach (newVarRecipe.ingredients) { item in
        
-                    Text("- " + RecipeViewModel.getPortions(ingredient: item,
-                                                            recipeServings: Recipetje.servings,
-                                                            targetServings: varSelectedServings) + " " + item.name)
+                    Text("- " + RecipeViewModel.getPortions(ingredient: item, recipeServings: Recipetje.servings, targetServings: varSelectedServings + "- " + item.name))
          
                 }
                 
@@ -101,6 +100,7 @@ struct RecipeDetailView: View {
       
     }
 }
+
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C3F47F628FC36B00034CDC2 /* rationalIvision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F47F528FC36B00034CDC2 /* rationalIvision.swift */; };
+		5C3F47F628FC36B00034CDC2 /* RationalIvision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F47F528FC36B00034CDC2 /* RationalIvision.swift */; };
 		5C544BE428F4355900006288 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C544BE328F4355900006288 /* RecipeDetailView.swift */; };
 		5C544C1B28F585A700006288 /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C544C1A28F585A700006288 /* RecipeTabView.swift */; };
 		5C812EBF28F1B7D500B945B6 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C812EBE28F1B7D500B945B6 /* RecipeListView.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C3F47F528FC36B00034CDC2 /* rationalIvision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rationalIvision.swift; sourceTree = "<group>"; };
+		5C3F47F528FC36B00034CDC2 /* RationalIvision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RationalIvision.swift; sourceTree = "<group>"; };
 		5C544BE328F4355900006288 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		5C544C1A28F585A700006288 /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
 		5C812EBE28F1B7D500B945B6 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		5C3F47F428FC36590034CDC2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				5C3F47F528FC36B00034CDC2 /* rationalIvision.swift */,
+				5C3F47F528FC36B00034CDC2 /* RationalIvision.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 				5C812EC528F1B86F00B945B6 /* RecipeViewModel.swift in Sources */,
 				5C812EBF28F1B7D500B945B6 /* RecipeListView.swift in Sources */,
 				5CFE431328F1752900D1F71F /* RECIPE_LIST_DEZEApp.swift in Sources */,
-				5C3F47F628FC36B00034CDC2 /* rationalIvision.swift in Sources */,
+				5C3F47F628FC36B00034CDC2 /* RationalIvision.swift in Sources */,
 				5CD62C1228F88A43008FB18F /* PickerDemoView.swift in Sources */,
 				5C812EC128F1B83600B945B6 /* RecipeModel.swift in Sources */,
 				5C8C3A8A28F6B5F700C8B267 /* RecipeFeaturedView.swift in Sources */,

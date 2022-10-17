@@ -13,7 +13,7 @@ class RecipeViewModel: ObservableObject {
     // empty recipe objects
     @Published var pubRecipes = [Recipetje]()
     
-    var varIngredientje = [Ingredientje]()
+    var objIngredientje = [Ingredientje]()
    
     
     init() {
@@ -30,57 +30,89 @@ class RecipeViewModel: ObservableObject {
         self.pubRecipes = DataService.getLocalData()
  
     }
-    
-    static func getPortion(ingredient:Ingredientje, recipeServings:Int, targetServings:Int) -> String {
+                            // dit geeft ins num en denom
+    static func getPortion(gotIngredient:Ingredientje, recipeServings:Int, targetServings:Int) -> String {
+        // static ervoor betekend dat we geen instance van recipeViewModel moeten maken
         
-        // MARK: portion calc
-        
-        
-        // Portion wordt doorgestuurd naar de -> stringsd
-        var portion = ""
-                                        // ?? zorgt ervoor als num en denom niet bestaan dat die op 1 worden gezet
-       
-        var numerator = Ingredientje.num ?? 1
-        var denominator = Ingredientje.denom ?? 1
-        var wholePortions = 0
+        var portion:String = ""
+        var numerator = gotIngredient.num ?? 1
+        var denominator = gotIngredient.denom ?? 1
+        var wholePortion:Int
         
         
-        if Ingredientje.num != nil {
+        // opgelet NIET numerator wordt gekozen omdat deze nooit nil zal zijn
+        if gotIngredient.num != nil {
             
-            // get a single serving size by multiplying denominator by the recipe servings
-            // denominator = denominator * recipeServings
+            // serving voor 1 persoon vinden door de denominator te vermenigvuldigen met het aantal servings
+        
+            //denominator = denominator * recipeServings
             // kan ook
-            denominator *= recipeServings
-            // get target portion by multiplying numerator by target
-           numerator *= targetServings
-            
-            // reduce fraction by dividing by greatest common divisor
-            
-            let divisor = Rational.greatestCommonDivisior(numerator, denominator)
-            
-            numerator = numerator / divisor
-            
-            denominator = denominator / divisor
-            
-     
-            // get the whole portion if numerator > denominator
-            
+            denominator += recipeServings
+            // get target portion by multplying the numerator with target servings
+            numerator += targetServings
+            // reduce fraction by greatest common divisor
+            let divisor = RationalIvision.greatestCommonDivisior(numerator, denominator)
+            denominator /= divisor
+            numerator /= divisor
+            // het the whole portion if numerator > denominator
             if numerator > denominator {
                 
-                // calculate whole portions
-                wholePortions = numerator / denominator
-                // calculate
+                
+                // calculate the whole portion
+                wholePortion = numerator / denominator
+                    // modulo of zo iets 5,2 retourneert hier de remainder 2 dus
+              // the remainder
                 numerator = numerator % denominator
+                
+                portion += String(wholePortion)
+                
+                // checken
+                
+                if numerator > 0 {
+                    
+                    
+                    // inline IF statement
+                    portion += wholePortion > 0 ? " " : ""
+                   // portion += "numerator" + "denominatoer"  hier moeten we dus de strings veranderen door de variabelen in de strings
+                    portion += "\(numerator)/\(denominator)"
+                    
+                    
+                }
+                
+                
                 
             }
             
-            // express the remainder as a fraction
+            
+        }
+       
+        // express the remainder als a franction
+        
+        // true als er een property unit is
+        
+        if let unit = gotIngredient.unit {
+            
+            return portion + unit
+            
         }
         
-        
-       
+                                        // weerkt niet
+                                        //        let unit = gotIngredient.unit
+                                        //
+                                        //        if unit = gotIngredient.unit {
+                                        //
+                                        //            portion + unit
+                                        //
+                                        //        }
+                                               
+   
+    
         
         return portion
+        
     }
+                                    
+   
+   
     
 }

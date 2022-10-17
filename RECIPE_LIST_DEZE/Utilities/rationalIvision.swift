@@ -1,5 +1,5 @@
 //
-//  rationalIvision.swift
+//  RationalIvision.swift
 //  RECIPE_LIST_DEZE
 //
 //  Created by Koen Sas, Micah Beech on 16/10/2022.
@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct Rational {
+struct RationalIvision {
     
     static func greatestCommonDivisior (_ a: Int, _ b: Int) -> Int {
         
