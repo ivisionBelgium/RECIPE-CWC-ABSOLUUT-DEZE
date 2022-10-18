@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct RationalIvision {
+struct Rational {
     
     static func greatestCommonDivisior (_ a: Int, _ b: Int) -> Int {
         

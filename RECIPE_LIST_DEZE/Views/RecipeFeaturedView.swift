@@ -1,134 +1,84 @@
 //
 //  RecipeFeaturedView.swift
-//  RECIPE_LIST_DEZE
+//  Recipe List App
 //
-//  Created by Koen Sas on 12/10/2022.
+//  Created by Christopher Ching on 2021-02-09.
 //
 
 import SwiftUI
 
 struct RecipeFeaturedView: View {
     
-    // alweer zonder () skes
-    @EnvironmentObject var vModel : RecipeViewModel
+    @EnvironmentObject var model:RecipeModel
     
-
     var body: some View {
         
-        VStack(alignment: .leading) {
-            // MARK: features
+        VStack(alignment: .leading, spacing: 0) {
+        
             Text("Featured Recipes")
-                .font(.largeTitle)
                 .bold()
-               
-            
+                .padding(.leading)
+                .padding(.top, 40)
+                .font(.largeTitle)
+                
             
             GeometryReader { geo in
+            
+            TabView {
                 
-                TabView {
+                // Loop through each recipe
+                ForEach (0..<model.recipes.count) { index in
                     
-                    // loop through all recipes
-                    ForEach (0..<vModel.pubRecipes.count) { index in
-                        // check which cards are valid for display
-                        if vModel.pubRecipes[index].featured == true {
-                            // Cards
-                          
-                            ZStack {
+                    // Only show those that should be featured
+                    if model.recipes[index].featured == true {
+                    
+                        // Recipe card
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.white)
                                 
-                                Rectangle()
-                                    .foregroundColor(.white)
-                                   
-                                
-                                VStack(){
-                                    
-                                    Image(vModel.pubRecipes[index].image)
-                                        .resizable(capInsets: EdgeInsets())
-                                        .aspectRatio(contentMode: .fill)
-                                        
-                                        .clipped()
-                           
-                                    Text(vModel.pubRecipes[index].name)
-                                        .foregroundColor(.blue)
-                                        //.onHover(foregroundColor(.green))
-                                        .padding(10)
-                                    
-                                    
-                                }
-                            }
-                            .frame(width: geo.size.width - 40,height: geo.size.height - 100, alignment: .center)
-                            .cornerRadius(20)
-                            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 5)
-                            //.shadow(color: .black, radius: 5 ,x: -5, y: 5)
-                            .opacity(100)
-                        // moet voor padding staan
                             
-                           
-                               
+                            VStack(spacing: 0) {
+                                Image(model.recipes[index].image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                                Text(model.recipes[index].name)
+                                    .padding(5)
+                            }
                         }
-                        
-                       
+                        .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(15)
+                        .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 5)
                         
                     }
-                    
-                 
                 }
                 
-                // anders geen geswipe
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-                // index bollekes achtergrong
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-               
             }
-            
-            
-            VStack(alignment: .leading) {
-                Text("Prep time")
-                
-                Text("Total Time")
-                    .font(.title2)
-                    .underline()
-                    .bold()
-               
-//                Text()
-//                    .environmentObject(RecipeViewModel())
-                
-               
-                
-                
-               
-                Text("Highlights")
-                    .font(.title2)
-                    .underline()
-                    .bold()
-                
-             
-                
-               
-                
-            }
-            .padding([.leading, .bottom])
-           
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             
         }
         
-   
-       
-        
-        
-        
-        
-        
-        
+            VStack (alignment: .leading, spacing: 10) {
+                
+                Text("Preparation Time:")
+                    .font(.headline)
+                Text("1 hour")
+                
+                Text("Highlights")
+                    .font(.headline)
+                Text("Healthy, Hearty")
+            }
+            .padding([.leading, .bottom])
+        }
     }
 }
 
 struct RecipeFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeFeaturedView()
-            .environmentObject(RecipeViewModel())
-            //.previewDevice("iPad Pro (12.9-inch) (5th generation)")
-            .previewDevice("iPhone 12")
-            
-            
+            .environmentObject(RecipeModel())
     }
 }
+

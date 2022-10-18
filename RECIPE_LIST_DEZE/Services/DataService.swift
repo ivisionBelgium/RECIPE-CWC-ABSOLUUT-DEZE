@@ -1,71 +1,65 @@
 //
 //  DataService.swift
-//  RECIPE_LIST_DEZE
+//  Recipe List App
 //
-//  Created by Koen Sas on 08/10/2022.
+//  Created by Christopher Ching on 2021-01-14.
 //
 
 import Foundation
 
 class DataService {
     
-//    func getLocalData() -> [Recipe] {
+    static func getLocalData() -> [Recipe] {
         
-      static func getLocalData() -> [Recipetje] {
+        // Parse local json file
         
-        // Path to local json file
-        
+        // Get a url path to the json file
         let pathString = Bundle.main.path(forResource: "recipes", ofType: "json")
         
-        
-        // check if pathString is not nil otherwise...
+        // Check if pathString is not nil, otherwise...
         guard pathString != nil else {
-            
-            //return empry recipe model
-            return [Recipetje]()
+            return [Recipe]()
         }
-        // CREATE URL OBJECT
         
-        // pathstring unwrappen want de bundle geegt een optional weer
-
+        // Create a url object
         let url = URL(fileURLWithPath: pathString!)
-        // create data object
         
         do {
-            
+            // Create a data object
             let data = try Data(contentsOf: url)
             
-            // decode json
+            // Decode the data with a JSON decoder
             let decoder = JSONDecoder()
-    
-            // nu ook ingredients decoden
+            
             do {
-                let recipeData = try decoder.decode([Recipetje].self, from: data)
                 
-                // add unique ID's
+                let recipeData = try decoder.decode([Recipe].self, from: data)
+                
+                // Add the unique IDs
                 for r in recipeData {
-                    
                     r.id = UUID()
                     
+                    // Add unique IDs to recipe ingredients
                     for i in r.ingredients {
-                        
                         i.id = UUID()
                     }
                 }
-          
+                
+                // Return the recipes
                 return recipeData
-                
-            }  catch {
-                
+            }
+            catch {
+                // error with parsing json
                 print(error)
             }
         }
-        catch{
-            
+        catch {
+            // error with getting data
             print(error)
         }
-
-        // moeten we doen
-        return [Recipetje]()
+        
+        return [Recipe]()
     }
+    
 }
+

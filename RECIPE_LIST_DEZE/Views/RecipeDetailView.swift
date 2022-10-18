@@ -1,111 +1,85 @@
-
-//  RecipeDetailView.swift
-//  RECIPE_LIST_DEZE
 //
-//  Created by Koen Sas on 10/10/2022.
+//  RecipeDetailView.swift
+//  Recipe List App
+//
+//  Created by Christopher Ching on 2021-01-14.
 //
 
 import SwiftUI
 
-
 struct RecipeDetailView: View {
-
-        @State var varSelectedServings = 2
-
-
-        // recipe is een nieuwe variabele
-        var newVarRecipe:Recipetje
-
+    
+    var recipe:Recipe
+    
+    @State var selectedServingSize = 2
+    
     var body: some View {
-
-
-
+        
         ScrollView {
-
-            // MARK: Image en picker
-            Image(newVarRecipe.image)
-                .resizable()
-                .scaledToFit()
-
-
-
-            VStack(alignment: .leading) {
-
-                VStack {
-
-                    // MARK: Picker
-                    Picker("ServingsNr", selection: $varSelectedServings) {
-
+        
+            VStack (alignment: .leading) {
+                
+                // MARK: Recipe Image
+                Image(recipe.image)
+                    .resizable()
+                    .scaledToFill()
+                
+                VStack (alignment: .leading) {
+                    Text("Select your serving size:")
+                    Picker("", selection: $selectedServingSize) {
                         Text("2").tag(2)
                         Text("4").tag(4)
                         Text("6").tag(6)
                         Text("8").tag(8)
-
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    // we kunnen enkel 1 parameter ingeven hier, rest blijft hetzelfde
-                    .frame(width: 160)
-
-
-
-                    // deze text geeft he geselecteerde door
-
-                //0   deze actieve kut nul gaf compiler is unable to type check
+                    .frame(width:160)
                 }
-                .padding(.leading, 0)
-                .padding(.trailing)
-
-
-
+                .padding()
+                
                 // MARK: Ingredients
-                Text("Ingredients")
-                    .padding(.bottom)
-                    .font(.title)
-
-                // vooraleer de json aanpassin g
-//                ForEach (newVarRecipe.ingredients, id: \.self) { item in
-//
-//                    Text(item)
-//
-//                }
-                // \.self kan hier weg want lijst is IDENTIFIABLE
-                ForEach (newVarRecipe.ingredients) { item in
-
-                    Text("- " + RecipeViewModel.getPortions(ingredient: item, recipeServings: Recipetje.servings, targetServings: varSelectedServings + "- " + item.name))
-
+                VStack(alignment: .leading) {
+                    Text("Ingredients")
+                        .font(.headline)
+                        .padding([.bottom, .top], 5)
+                    
+                    ForEach (recipe.ingredients) { item in
+                        
+                        Text("• " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + item.name.lowercased())
+                    }
                 }
-
+                .padding(.horizontal)
+                
+                // MARK: Divider
+                Divider()
+                
                 // MARK: Directions
-
-                Text("Directions")
-                    .padding(.vertical).font(.title)
-
-
-                ForEach (0..<newVarRecipe.directions.count, id: \.self) { index in
-
-                    Text(String(index) + ". " + newVarRecipe.directions[index])
-                        .padding(.bottom, 2.0)
-
-
+                VStack(alignment: .leading) {
+                    Text("Directions")
+                        .font(.headline)
+                        .padding([.bottom, .top], 5)
+                    
+                    ForEach(0..<recipe.directions.count, id: \.self) { index in
+                        
+                        Text(String(index+1) + ". " + recipe.directions[index])
+                            .padding(.bottom, 5)
+                    }
                 }
-
+                .padding(.horizontal)
             }
-            .padding(.leading)
-
-
+            
         }
-        .navigationBarTitle(newVarRecipe.name)
-
-
-
+        .navigationBarTitle(recipe.name)
     }
 }
-
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-
-        let prevModel = RecipeViewModel()
-        RecipeDetailView(newVarRecipe: prevModel.pubRecipes[0])
+        
+        // Create a dummy recipe and pass it into the detail view so that we can see a preview
+        let model = RecipeModel()
+        
+        RecipeDetailView(recipe: model.recipes[0])
     }
 }
+

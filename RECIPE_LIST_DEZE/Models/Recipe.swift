@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Recipetje: Identifiable, Decodable {
+class Recipe: Identifiable, Decodable {
     
     
     
@@ -21,13 +21,13 @@ class Recipetje: Identifiable, Decodable {
     var totalTime:String
     var servings:Int
     // deze moest veranderen van [String] naar [Ingredient] anders error in  Dataservice i.id: werd als string herkent
-    var ingredients:[Ingredientje]
+    var ingredients:[Ingredient]
     var directions:[String]
     var highlights:[String]
     
 }
 
-class Ingredientje: Identifiable, Decodable {
+class Ingredient: Identifiable, Decodable {
     
     // identifiable maakt dat het LIST element de verschillende items ziet, daarom is de UUID verplicgt
     

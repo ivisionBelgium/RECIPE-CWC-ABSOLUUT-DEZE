@@ -1,21 +1,19 @@
 //
-//  RECIPE_LIST_DEZEApp.swift
-//  RECIPE_LIST_DEZE
+//  Recipe_List_App.swift
+//  Recipe List App
 //
-//  Created by Koen Sas on 08/10/2022.
+//  Created by Christopher Ching on 2021-01-14.
 //
 
 import SwiftUI
 
 @main
-struct RECIPE_LIST_DEZEApp: App {
+struct Recipe_List_App: App {
     var body: some Scene {
         WindowGroup {
             RecipeTabView()
-            
-                // deze mag ook hier staan dan een stapje lager
-            // Crashed ??
-               .environmentObject(RecipeViewModel())
+                
         }
     }
 }
+
