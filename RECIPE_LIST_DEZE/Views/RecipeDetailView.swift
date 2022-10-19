@@ -25,7 +25,12 @@ struct RecipeDetailView: View {
                     .scaledToFill()
                 
                 VStack (alignment: .leading) {
+                    
+                    Text(recipe.name)
+                        .font(.title)
+                        .padding(.bottom, 2.0)
                     Text("Select your serving size:")
+                        .padding(3.0)
                     Picker("", selection: $selectedServingSize) {
                         Text("2").tag(2)
                         Text("4").tag(4)
@@ -69,6 +74,7 @@ struct RecipeDetailView: View {
             }
             
         }
+        // deze mag weg want anders dubbele titel na sheet aanpassing
         .navigationBarTitle(recipe.name)
     }
 }
